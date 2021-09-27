@@ -1,0 +1,259 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  text-decoration: none
+  list-style-type: none
+  color: white
+  scroll-behavior: smooth
+
+body
+  font-family: 'Lato', sans-serif
+  background: #222222
+
+header
+  height: 100vh
+  max-width: 100%
+  background-image: url("../images/banner.png")
+  background-position: center top
+  background-size: cover
+  position: relative
+  z-index: 1
+  .backMask
+    height: 100%
+    width: 100%
+    background: rgba(0, 0, 0, 0.3)
+    position: absolute
+    z-index: -1
+  .space
+    width: 100%
+    height: 100px
+  .topHeader
+    display: flex
+    justify-content: space-between
+    align-items: center
+    flex-wrap: wrap
+    width: 100%
+    padding-left: 104px
+    .logo
+      font-size: 3.2vmin
+      font-weight: 900
+      padding: 1rem
+    .navItem
+      display: flex
+      .menu
+        margin-right: 6rem
+        ul
+          display: flex
+          li
+            margin-right: 1.5rem
+            a
+              font-size: 4vmin
+              padding: 0.75rem 1.25rem
+              font-weight: 900
+              text-shadow: 0.1rem 0.1rem 0.1rem gray
+              &:hover
+                color: #fff6a6
+      .community
+        display: flex
+        padding-right: 82px
+        li
+          a
+            padding: 1rem
+            img
+              width: 4vh
+              height: 4vh
+      .menuHam
+        display: none
+        a
+          font-size: 2.5vw
+          padding: 0.75rem 1.25rem
+          font-weight: 900
+          text-shadow: 0.1rem 0.1rem 0.1rem gray
+          margin-right: 50px
+  .content
+    min-height: 100vh
+    display: flex
+    justify-content: center
+    align-items: center
+    text-align: center
+    h2
+      font-size: 12vmin
+      font-weight: 900
+      line-height: 12vmin
+    p
+      font-size: 6vmin
+      font-weight: 90
+@media (max-width: 1700px)
+  header
+    .topHeader
+      padding-left: 50px
+      .navItem
+        .community
+          display: none
+@media (max-width: 1360px)
+  header
+    .space
+      height: 20px
+    .topHeader
+      .navItem
+        .menu
+          display: none
+          ul
+            flex-direction: column
+            position: absolute
+            top: 86px
+            right: 0px
+            li
+              a
+                display: block
+                &:hover
+                  background: white
+                  opacity: 0.6
+        .menuHam
+          display: block
+@media (max-width: 768px)
+  header
+    .topHeader
+      padding-left: 20px
+      .navItem
+        .menuHam
+          a
+            font-size: 3.5vw
+            margin-right: 20px
+
+main
+  .about
+    margin-top: 88px
+    display: flex
+    flex-wrap: wrap
+    .aboutItem
+      width: 50%
+      position: relative
+      overflow: hidden
+      img
+        display: block
+        width: 100%
+        height: 100%
+      &:hover .itemMask
+        top: 0%
+      .itemMask
+        width: 100%
+        height: 100%
+        position: absolute
+        background: rgba(167, 90, 0, 0.8)
+        top: -100%
+        left: 0
+        transition: all 0.25s
+        h2
+          font-size: 4vw
+          color: #fff
+          padding: 10vw 0 0 4vw
+        p
+          font-size: 1.7vw
+          color: #fff
+          line-height: 4vw
+          padding: 10vw 4vw 0 4vw
+  .latest
+    h3
+      font-size: 8vmin
+      color: #FF9921
+      font-weight: 900
+      padding: 160px 0 30px 76px
+    .line
+      background: #FF9921
+      width: 94px
+      height: 3px
+      margin: 0 0 143px 78px
+    .produceItem
+      display: flex
+      flex-wrap: wrap
+      .cardItem
+        width: 25%
+        height: 25vw
+        position: relative
+        transform-style: preserve-3d
+        transition: 0.5s all ease
+        .cardFront
+          opacity: 0.2
+          position: absolute
+          backface-visibility: hidden
+          width: 100%
+          height: 100%
+          img
+            width: 100%
+            height: 100%
+        .cardBack
+          opacity: 1
+          position: absolute
+          backface-visibility: hidden
+          transform: rotateY(180deg)
+          width: 100%
+          height: 100%
+          img
+            width: 100%
+            height: 100%
+        &:hover
+          transform: rotateY(180deg)
+  .contact
+    h3
+      font-size: 8vmin
+      color: #FF9921
+      font-weight: 900
+      padding: 160px 0 30px 76px
+    .line
+      background: #FF9921
+      width: 94px
+      height: 3px
+      margin: 0 0 143px 78px
+    img
+      max-width: 100%
+@media (max-width: 768px)
+  main
+    .latest
+      .produceItem
+        .cardItem
+          width: 50%
+          height: 50vw
+    .about
+      .back
+        order: 1
+      .aboutItem
+        width: 100%
+        .itemMask
+          h2
+            font-size: 8vw
+            color: #fff
+            padding: 18vw 0 0 6vw
+          p
+            font-size: 3.5vw
+            color: #fff
+            line-height: 7vw
+            padding: 24vw 4vw 0 6vw
+
+footer
+  margin: 230px 60px 85px 65px
+  display: flex
+  justify-content: space-between
+  align-items: center
+  h1
+    font-size: 5vmin
+    font-weight: 900
+  p
+    font-size: 3vmin
+    font-weight: 700
+    padding-right: 4vmin
+  .community
+    display: flex
+    li
+      a
+        margin-right: 2vmin
+        img
+          width: 6vmin
+          height: 6vmin
+@media (max-width: 1150px)
+  footer
+    flex-direction: column
+    margin: 100px auto 50px auto
+    h1, p, .community
+      padding-bottom: 2vmin

@@ -1,0 +1,311 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style-type: none;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Lato", sans-serif;
+  background: #222222;
+}
+
+header {
+  height: 100vh;
+  max-width: 100%;
+  background-image: url("../images/banner.png");
+  background-position: center top;
+  background-size: cover;
+  position: relative;
+  z-index: 1;
+}
+header .backMask {
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  position: absolute;
+  z-index: -1;
+}
+header .space {
+  width: 100%;
+  height: 100px;
+}
+header .topHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+  padding-left: 104px;
+}
+header .topHeader .logo {
+  font-size: 3.2vmin;
+  font-weight: 900;
+  padding: 1rem;
+}
+header .topHeader .navItem {
+  display: flex;
+}
+header .topHeader .navItem .menu {
+  margin-right: 6rem;
+}
+header .topHeader .navItem .menu ul {
+  display: flex;
+}
+header .topHeader .navItem .menu ul li {
+  margin-right: 1.5rem;
+}
+header .topHeader .navItem .menu ul li a {
+  font-size: 4vmin;
+  padding: 0.75rem 1.25rem;
+  font-weight: 900;
+  text-shadow: 0.1rem 0.1rem 0.1rem gray;
+}
+header .topHeader .navItem .menu ul li a:hover {
+  color: #fff6a6;
+}
+header .topHeader .navItem .community {
+  display: flex;
+  padding-right: 82px;
+}
+header .topHeader .navItem .community li a {
+  padding: 1rem;
+}
+header .topHeader .navItem .community li a img {
+  width: 4vh;
+  height: 4vh;
+}
+header .topHeader .navItem .menuHam {
+  display: none;
+}
+header .topHeader .navItem .menuHam a {
+  font-size: 2.5vw;
+  padding: 0.75rem 1.25rem;
+  font-weight: 900;
+  text-shadow: 0.1rem 0.1rem 0.1rem gray;
+  margin-right: 50px;
+}
+header .content {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+header .content h2 {
+  font-size: 12vmin;
+  font-weight: 900;
+  line-height: 12vmin;
+}
+header .content p {
+  font-size: 6vmin;
+  font-weight: 90;
+}
+
+@media (max-width: 1700px) {
+  header .topHeader {
+    padding-left: 50px;
+  }
+  header .topHeader .navItem .community {
+    display: none;
+  }
+}
+@media (max-width: 1360px) {
+  header .space {
+    height: 20px;
+  }
+  header .topHeader .navItem .menu {
+    display: none;
+  }
+  header .topHeader .navItem .menu ul {
+    flex-direction: column;
+    position: absolute;
+    top: 86px;
+    right: 0px;
+  }
+  header .topHeader .navItem .menu ul li a {
+    display: block;
+  }
+  header .topHeader .navItem .menu ul li a:hover {
+    background: white;
+    opacity: 0.6;
+  }
+  header .topHeader .navItem .menuHam {
+    display: block;
+  }
+}
+@media (max-width: 768px) {
+  header .topHeader {
+    padding-left: 20px;
+  }
+  header .topHeader .navItem .menuHam a {
+    font-size: 3.5vw;
+    margin-right: 20px;
+  }
+}
+main .about {
+  margin-top: 88px;
+  display: flex;
+  flex-wrap: wrap;
+}
+main .about .aboutItem {
+  width: 50%;
+  position: relative;
+  overflow: hidden;
+}
+main .about .aboutItem img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+main .about .aboutItem:hover .itemMask {
+  top: 0%;
+}
+main .about .aboutItem .itemMask {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: rgba(167, 90, 0, 0.8);
+  top: -100%;
+  left: 0;
+  transition: all 0.25s;
+}
+main .about .aboutItem .itemMask h2 {
+  font-size: 4vw;
+  color: #fff;
+  padding: 10vw 0 0 4vw;
+}
+main .about .aboutItem .itemMask p {
+  font-size: 1.7vw;
+  color: #fff;
+  line-height: 4vw;
+  padding: 10vw 4vw 0 4vw;
+}
+main .latest h3 {
+  font-size: 8vmin;
+  color: #FF9921;
+  font-weight: 900;
+  padding: 160px 0 30px 76px;
+}
+main .latest .line {
+  background: #FF9921;
+  width: 94px;
+  height: 3px;
+  margin: 0 0 143px 78px;
+}
+main .latest .produceItem {
+  display: flex;
+  flex-wrap: wrap;
+}
+main .latest .produceItem .cardItem {
+  width: 25%;
+  height: 25vw;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: 0.5s all ease;
+}
+main .latest .produceItem .cardItem .cardFront {
+  opacity: 0.2;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  width: 100%;
+  height: 100%;
+}
+main .latest .produceItem .cardItem .cardFront img {
+  width: 100%;
+  height: 100%;
+}
+main .latest .produceItem .cardItem .cardBack {
+  opacity: 1;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  transform: rotateY(180deg);
+  width: 100%;
+  height: 100%;
+}
+main .latest .produceItem .cardItem .cardBack img {
+  width: 100%;
+  height: 100%;
+}
+main .latest .produceItem .cardItem:hover {
+  transform: rotateY(180deg);
+}
+main .contact h3 {
+  font-size: 8vmin;
+  color: #FF9921;
+  font-weight: 900;
+  padding: 160px 0 30px 76px;
+}
+main .contact .line {
+  background: #FF9921;
+  width: 94px;
+  height: 3px;
+  margin: 0 0 143px 78px;
+}
+main .contact img {
+  max-width: 100%;
+}
+
+@media (max-width: 768px) {
+  main .latest .produceItem .cardItem {
+    width: 50%;
+    height: 50vw;
+  }
+  main .about .back {
+    order: 1;
+  }
+  main .about .aboutItem {
+    width: 100%;
+  }
+  main .about .aboutItem .itemMask h2 {
+    font-size: 8vw;
+    color: #fff;
+    padding: 18vw 0 0 6vw;
+  }
+  main .about .aboutItem .itemMask p {
+    font-size: 3.5vw;
+    color: #fff;
+    line-height: 7vw;
+    padding: 24vw 4vw 0 6vw;
+  }
+}
+footer {
+  margin: 230px 60px 85px 65px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+footer h1 {
+  font-size: 5vmin;
+  font-weight: 900;
+}
+footer p {
+  font-size: 3vmin;
+  font-weight: 700;
+  padding-right: 4vmin;
+}
+footer .community {
+  display: flex;
+}
+footer .community li a {
+  margin-right: 2vmin;
+}
+footer .community li a img {
+  width: 6vmin;
+  height: 6vmin;
+}
+
+@media (max-width: 1150px) {
+  footer {
+    flex-direction: column;
+    margin: 100px auto 50px auto;
+  }
+  footer h1, footer p, footer .community {
+    padding-bottom: 2vmin;
+  }
+}/*# sourceMappingURL=index.css.map */
